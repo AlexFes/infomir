@@ -1,6 +1,6 @@
-	/*TODO: remove in production*/
+  /*TODO: remove in production*/
 /*.col {
-	border: 1px solid;
+  border: 1px solid;
 }*/
 
 
@@ -10,7 +10,36 @@
 }*/
 
 @media (max-width: 1667px) {
-	.col-2 {
-			display: none;
-	}
+  .col-2 {
+      display: none;
+  }
+}
+
+html{
+    min-height:100%;/* make sure it is at least as tall as the viewport */
+    position:relative;
+}
+body{
+    height:100%; /* force the BODY element to match the height of the HTML element */
+}
+#greenline{
+  background: #00bab5;
+  position:absolute;
+  top:0;
+  height: 342px;
+  width: 100%;
+  overflow:hidden;
+  z-index:-1; /* Remove this line if it's not going to be a background! */
+}
+
+#greyline{
+  background: #e6e6e6;
+  position:absolute;
+  top:0;
+  bottom:0;
+  width: 950px;
+  left:50%;
+  margin-left:-475px; /* half of the width */
+  overflow:hidden;
+  z-index:-2; /* Remove this line if it's not going to be a background! */
 }
