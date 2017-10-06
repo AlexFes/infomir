@@ -9,8 +9,8 @@
     margin-left: -15px;
 }*/
 
-@media (max-width: 1547px) {
-	.col-xs-3 {
+@media (max-width: 1667px) {
+	.col-2 {
 			display: none;
 	}
 }
