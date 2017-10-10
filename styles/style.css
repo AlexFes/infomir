@@ -15,13 +15,15 @@
   }
 }
 
+.contacts_caption {
+  position: absolute;
+  right: 130px;
+  top: 20px;
+}
+
 hr.style3 {
 	border-top: 1px dashed #8c8b8b;
   width: 100%;
-}
-
-.thumbnail {
-    position: relative;
 }
 
 .caption {
@@ -29,7 +31,6 @@ hr.style3 {
   top: 30%;
   left: 10%;
   right: 10%;
-  /*width: 70%;*/
 }
 
 html{
