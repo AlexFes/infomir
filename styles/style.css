@@ -15,6 +15,23 @@
   }
 }
 
+hr.style3 {
+	border-top: 1px dashed #8c8b8b;
+  width: 100%;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  right: 10%;
+  /*width: 70%;*/
+}
+
 html{
     min-height:100%;/* make sure it is at least as tall as the viewport */
     position:relative;
