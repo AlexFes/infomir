@@ -28,6 +28,7 @@ hr.style3 {
 
 hr {
     border: solid 1px black;
+    width: 95%;
 }
 
 .caption {
@@ -47,13 +48,15 @@ body {
 }
 
 
+
+
 #greenline{
     background: #00bab5;
     position:absolute;
     top:0;
     height: 342px;
     width: 100%;
-    overflow:hidden;
+    /*overflow:hidden;*/
     z-index:-1; /* Remove this line if it's not going to be a background! */
 }
 
@@ -72,14 +75,50 @@ body {
     height: 80%;
 }
 
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col, .col-1, .col-2,
+.col-3, .col-4, .col-5,
+.col-6, .col-7, .col-8 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-4 h3 {
+    display: block;
+    padding-top: 10rem;
+}
 
 
+    /*Dropdowns*/
+.dropbtn {
+    background-image: url("../images/down.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    left: 100%;
+    width: 4rem;
+    height: 5rem;
+    border: none;
+}
 
+.dropbtn:focus {
+    outline: none;
+}
 
+.dropdown-content {
+    display: none;
+    margin-top: -3rem;
+}
 
+.show {
+    display: flex;
+}
 
-
-
-
+#dropdown-2 p {
+    font-size: 1.2rem;
+}
 
 
