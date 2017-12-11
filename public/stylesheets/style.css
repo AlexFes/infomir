@@ -47,8 +47,22 @@ body {
     height:100%; /* force the BODY element to match the height of the HTML element */
 }
 
+.no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    -moz-appearance:textfield !important;
+    /*margin: 0 !important;*/
+}
 
 
+
+
+.dashed-border {
+    width: 70%;
+    height: 0;
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+    border: black 1px dashed;
+}
 
 #greenline{
     background: #00bab5;
