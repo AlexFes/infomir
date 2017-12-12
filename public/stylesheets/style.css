@@ -1,14 +1,3 @@
-  /*TODO: remove in production*/
-/*.col {
-  border: 1px solid;
-}*/
-
-
-/*.row {
-    margin-right: -15px;
-    margin-left: -15px;
-}*/
-
 @media (max-width: 1667px) {
     .col-2 {
         display: none;
@@ -59,8 +48,16 @@ body {
 .dashed-border {
     width: 70%;
     height: 0;
-    margin-top: 1rem;
-    margin-bottom: 0.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border: black 1px dashed;
+}
+
+.dashed-border-full {
+    width: 96%;
+    height: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     border: black 1px dashed;
 }
 
