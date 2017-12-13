@@ -9,22 +9,27 @@ let done = 0;
 let products = [
     new Product({
         title: 'Образовательный набор',
-        description: '1'
+        quantity: 5
     }),
 
     new Product({
-        title: 'Робототехнический набор 1',
-        description: '2'
+        title: 'Робототехнический набор №1',
+        description: 'LEGO Mindstorms EV3 31313',
+        price: 14000,
+        quantity: 5
     }),
 
     new Product({
-        title: 'Робототехнический набор 2',
-        description: '3'
+        title: 'Робототехнический набор №2',
+        description: 'LEGO Mindstorms Education EV3',
+        price: 13000,
+        quantity: 5
     }),
 
     new Product({
-        title: 'Робототехнический набор 3',
-        description: '4'
+        title: 'Робототехнический набор №3',
+        description: 'Обучаюший робот ПиктоМир',
+        quantity: 5
     })
 ];
 
@@ -37,6 +42,3 @@ for (let i = 0; i < products.length; ++i) {
         }
     });
 }
-
-
-

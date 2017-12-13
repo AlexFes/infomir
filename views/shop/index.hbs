@@ -257,7 +257,7 @@
                 <div class="row">
                     <div class="col-7 d-flex flex-column">
                         <h5>
-                            Образовательный набор
+                            {{ products.[0].title}}
                         </h5>
 
                         <ol>
@@ -291,7 +291,7 @@
                                 </div>
                             </form>
 
-                            <button type="button" class="btn btn-success mr-1">В корзину</button>
+                            <a href="/add-to-cart/{{ products.[0]._id }}" role="button" class="btn btn-success mr-1">В корзину</a>
 
                             <a href="#" role="button" class="btn btn-success pt-2">
                                 <i class="material-icons">shopping_cart</i>
@@ -330,11 +330,11 @@
 
                     <div class="col-7 d-flex flex-column">
                         <h5>
-                            Робототехнический набор №1
+                            {{ products.[1].title }}
                         </h5>
 
                         <h4>
-                            LEGO Mindstorms EV3 31313
+                            {{ products.[1].description }}
                         </h4>
 
                         <p>
@@ -355,7 +355,7 @@
                         </ol>
 
                         <p>
-                            Ориентировочная цена — 14000 руб.
+                            Ориентировочная цена — {{ products.[1].price }} руб.
                         </p>
 
                         <div class="d-flex flex-row">
@@ -373,7 +373,7 @@
                                 </div>
                             </form>
 
-                            <button type="button" class="btn btn-success mr-1">В корзину</button>
+                            <a href="/add-to-cart/{{ products.[1]._id }}" role="button" class="btn btn-success mr-1">В корзину</button>
 
                             <a href="#" role="button" class="btn btn-success pt-2">
                                 <i class="material-icons">shopping_cart</i>
@@ -401,11 +401,11 @@
                 <div class="row">
                     <div class="col-7 d-flex flex-column">
                         <h5>
-                            Робототехнический набор №2
+                            {{ products.[2].title }}
                         </h5>
 
                         <h4>
-                            LEGO Mindstorms Education EV3
+                            {{ products.[2].description }}
                         </h4>
 
                         <p>
@@ -426,7 +426,7 @@
                         </ol>
 
                         <p>
-                            Ориентировочная цена — 13000 руб.
+                            Ориентировочная цена — {{ products.[2].price }} руб.
                         </p>
 
                         <div class="d-flex flex-row">
@@ -444,7 +444,7 @@
                                 </div>
                             </form>
 
-                            <button type="button" class="btn btn-success mr-1">В корзину</button>
+                            <a href="/add-to-cart/{{ products.[2]._id }}" role="button" class="btn btn-success mr-1">В корзину</button>
 
                             <a href="#" role="button" class="btn btn-success pt-2">
                                 <i class="material-icons">shopping_cart</i>
@@ -483,11 +483,11 @@
 
                     <div class="col-7 d-flex flex-column pl-2">
                         <h5>
-                            Робототехнический набор №3
+                            {{ products.[3].title }}
                         </h5>
 
                         <h4>
-                            Обучаюший робот ПиктоМир
+                            {{ products.[3].description }}
                         </h4>
 
                         <p>
@@ -515,7 +515,7 @@
                                 </div>
                             </form>
 
-                            <button type="button" class="btn btn-success mr-1">В корзину</button>
+                            <a href="/add-to-cart/{{ products.[3]._id }}" role="button" class="btn btn-success mr-1">В корзину</button>
 
                             <a href="#" role="button" class="btn btn-success pt-2">
                                 <i class="material-icons">shopping_cart</i>

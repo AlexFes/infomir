@@ -10,7 +10,17 @@ let schema = new Schema({
 
     description: {
         type: String,
-        required: true
+        default: ''
+    },
+
+    price: {
+        type: Number,
+        default: ''
+    },
+
+    quantity: {
+        type: Number,
+        default: 0
     }
 });
 
