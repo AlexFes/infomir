@@ -4,8 +4,6 @@ let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/shopping', {useMongoClient: true});
 
-let done = 0;
-
 let products = [
     new Product({
         title: 'Образовательный набор',
@@ -33,12 +31,9 @@ let products = [
     })
 ];
 
-for (let i = 0; i < products.length; ++i) {
-    products[i].save(function(err, result) {
-        ++done;
-
-        if (done === products.length) {
-            mongoose.disconnect();
-        }
-    });
-}
+products.reduce((p, product)=> {
+    return p.then(() => product.save());
+}, Promise.resolve())
+.then(() => {
+    mongoose.disconnect();
+});

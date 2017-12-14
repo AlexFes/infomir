@@ -39,7 +39,9 @@ app.use((req, res, next) => {
    res.locals.session = req.session;
    next();
 });
+
 app.use('/', index);
+//app.use('/add-to-cart', index);     // ???
 app.use('/users', users);
 
 
