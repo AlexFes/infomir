@@ -1,49 +1,46 @@
-@media (max-width: 1667px) {
+@media screen and (max-width: 1300px) {
     .col-2 {
         display: none;
     }
-}
 
-.contacts_caption {
-    position: absolute;
-    right: 130px;
-    top: 20px;
-}
-
-hr.style3 {
-	border-top: 1px dashed #8c8b8b;
-    width: 100%;
+    .col-8 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
 }
 
 hr {
     border: solid 1px black;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     width: 95%;
 }
 
-.caption {
-    position: absolute;
-    top: 32%;
-    left: 47%;
-    right: 20%;
+hr.style3 {
+	border: 1px dashed black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
 }
 
 html {
-    min-height:100%;/* make sure it is at least as tall as the viewport */
-    position:relative;
+    min-height: 100%;
+    position: relative;
 }
 
 body {
-    height:100%; /* force the BODY element to match the height of the HTML element */
+    height: 100%;
+}
+
+.col-4 h3 {
+    display: block;
+    padding-top: 10rem;
 }
 
 .no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
     -webkit-appearance: none !important;
-    -moz-appearance:textfield !important;
-    /*margin: 0 !important;*/
+    -moz-appearance: textfield !important;
 }
-
-
-
 
 .dashed-border {
     width: 70%;
@@ -63,27 +60,20 @@ body {
 
 #greenline{
     background: #00bab5;
-    position:absolute;
-    top:0;
+    position: absolute;
+    top: 0;
     height: 342px;
     width: 100%;
-    /*overflow:hidden;*/
-    z-index:-1; /* Remove this line if it's not going to be a background! */
+    z-index: -1;
 }
 
 #greyline{
     background: #e6e6e6;
-    position:absolute;
+    position: absolute;
     height: 100%;
-    width: 52%;
-    left: 24%;
-    /*overflow:hidden;*/
-    z-index:-2; /* Remove this line if it's not going to be a background! */
-}
-
-.horizontal-tags {
-    width: 100%;
-    height: 80%;
+    width: 70%;
+    left: 15%;
+    z-index: -2;
 }
 
 .row {
@@ -98,20 +88,102 @@ body {
     padding-right: 0;
 }
 
-.col-4 h3 {
+
+
+
+
+
+    /* Responsive views */
+.horizontal-tags {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.contacts_caption {
+    position: absolute;
+    right: 13%;
+    bottom: 2%;
+}
+
+.caption {
+    position: absolute;
+    width: 35%;
+    height: 50%;
+}
+
+.responsive-paragraph {
+    font-size: 1.4rem;
+    font-size: 1.7vw;
+}
+
+.responsive-caption {
+    font-size: 1.7rem;
+    font-size: 1.6vw;
+}
+
+.responsive-header-1 {
+    padding-top: 2rem;
+    font-size: 2.2rem;
+    font-size: 2.4vw;
+}
+
+.responsive-header-2 {
+    padding-bottom: 2rem;
+    font-size: 1.2rem;
+    font-size: 1.4vw;
+}
+
+.responsive-image {
     display: block;
-    padding-top: 10rem;
+    position: relative;
+    top: 2rem;
+    left: 5rem;
+    width: 13rem;
+    left: 6vw;
+    width: 15vw;
+}
+
+.responsive-circle-images {
+    position: absolute;
+    width: 13rem;
+    width: 16vw;
 }
 
 
-    /*Dropdowns*/
+.responsive-header-main {
+    position: absolute;
+    right: 1vw;
+    top: 5vw;
+    font-size: 5vw;
+}
+
+.responsive-image-main {
+    width: 14vw;
+}
+
+.header-container-1 {
+    position: relative;
+    width: 35%;
+    height: 12vw;
+}
+
+.header-container-2 {
+    width: 25%;
+    height: 12vw;
+}
+
+
+
+
+    /* Dropdowns */
 .dropbtn {
     background-image: url("../images/down.svg");
     background-repeat: no-repeat;
     background-color: transparent;
     left: 100%;
     width: 4rem;
-    height: 5rem;
+    height: 2rem;
     border: none;
 }
 
@@ -121,15 +193,19 @@ body {
 
 .dropdown-content {
     display: none;
-    margin-top: -3rem;
+    margin-top: 1rem;
 }
 
 .show {
     display: flex;
 }
 
-#dropdown-2 p {
-    font-size: 1.2rem;
+#dropdown-2 {
+    margin-top: -5rem;
 }
+
+/*#dropdown-2 .col-3 p {*/
+    /*font-size: 1.2rem;*/
+/*}*/
 
 
