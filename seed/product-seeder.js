@@ -28,6 +28,12 @@ let products = [
         title: 'Робототехнический набор №3',
         description: 'Обучаюший робот ПиктоМир',
         quantity: 5
+    }),
+
+    new Product({
+        title: 'Вертун',
+        price: 799,
+        quantity: 5
     })
 ];
 

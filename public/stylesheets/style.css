@@ -71,20 +71,11 @@ body {
 #greyline {
     background: #e6e6e6;
     position: absolute;
-    height: 91.4%;
+    height: 100%;
     width: 70%;
     left: 15%;
     z-index: -2;
 }
-
-/*.greyline {*/
-    /*background: #e6e6e6;*/
-    /*position: absolute;*/
-    /*height: 100%;*/
-    /*width: 70%;*/
-    /*left: 15%;*/
-    /*z-index: -2;*/
-/*}*/
 
 .row {
     margin-left: 0;
@@ -96,6 +87,14 @@ body {
 .col-6, .col-7, .col-8 {
     padding-left: 0;
     padding-right: 0;
+}
+
+.footer-1 {
+    width: 65%;
+}
+
+.footer-2 {
+    width: 75%;
 }
 
 
@@ -202,7 +201,6 @@ body {
     /*height: 2rem;*/
     width: 3vw;
     height: 2vw;
-
     border: none;
 }
 
@@ -243,6 +241,7 @@ body {
 }
 
 .checkbox-style {
+    min-width: 32px;
     width: 2.5vw;
     height: 2.7vw;
     margin-right: 0.4vw;
@@ -257,11 +256,11 @@ body {
 }
 
 .button-1 {
-    background-color: #d9e022;
-    border-radius: 1rem;
+    background-image: url("../images/button_vkor.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
     border: none;
-    font-size: 0.9vw;
-    width: 5.5vw;
+    width: 13.5vw;
     height: 2.7vw;
     margin-left: 0.4vw;
 }
@@ -278,7 +277,37 @@ body {
     width: 100%;
 }
 
+.vertun-style {
+    width: 13rem;
+    width: 19.8vw;
+}
 
+.vertun-caption {
+    position: absolute;
+    width: 45%;
+    height: 75%;
+    font-size: 0.9vw;
+}
 
+.vertun-header {
+    font-size: 1.2vw;
+}
+
+.vertun-price-1 {
+    font-size: 1.6vw;
+    text-decoration: line-through;
+    margin-top: -12%;
+}
+
+.vertun-price-2 {
+    font-size: 2vw;
+    margin-bottom: 0;
+}
+
+.vertun-age {
+    display: inline;
+    float: right;
+    width: 18%;
+}
 
 
