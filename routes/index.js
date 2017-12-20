@@ -2,7 +2,6 @@ let express = require('express');
 let Product = require('../models/product');
 let mongoose = require('mongoose');
 let Cart = require('../models/cart');
-//let generateArrays = require('../models/cart');
 let router = express.Router();
 
 mongoose.Promise = global.Promise;
@@ -32,10 +31,19 @@ router.post('/add-to-cart/:id', (req, res, next) => {
             req.session.cart = cart;
             console.log(req.session.cart);
 
-            // res.locals.productsArray = cart.generateArrays();
-
             res.redirect('/#shop');
         });
+});
+
+router.get('/remove/:id', (req, res, next) => {
+    let productId = req.params.id;
+
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.removeItem(productId);
+    req.session.cart = cart;
+
+    res.redirect('/#target');
 });
 
 module.exports = router;

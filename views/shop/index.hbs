@@ -133,7 +133,7 @@
             <div class="col-2"></div>
 
             <div class="col-4 px-3">
-                <p class="h5">
+                <p class="h5 responsive-header-2">
                     КуМир (Комплект Учебных МИРов)
                 </p>
 
@@ -142,7 +142,7 @@
                     курсов информатики и программирования в средней и высшей школе.
                 </p>
 
-                <p class="h5">
+                <p class="h5 responsive-header-2">
                     Особенности системы КуМир
                 </p>
 
@@ -157,7 +157,7 @@
             </div>
 
             <div class="col-4 px-3">
-                <p class="h5">
+                <p class="h5 responsive-header-2">
                     ПиктоМир
                 </p>
 
@@ -205,15 +205,14 @@
 
             <div class="col-3"></div>
         </div>
-                <!--<div class="dropdown-content pt-3" id="dropdown-2">-->
-                <!--</div>-->
+
         <hr>
 
-        <div class="row responsive-main-paragraph pt-5">
+        <div class="row responsive-main-paragraph pt-3">
             <div class="col-2"></div>
 
             <div class="col-8 px-5">
-                <p class="h3">
+                <p class="h3 cart-header pb-3">
                     Комплект для проведения занятий по "Алгоритмике"
                 </p>
 
@@ -478,7 +477,7 @@
                     </div>
                 </div>
 
-                <div id="target" class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center">
                     <div class="dashed-border-full"></div>
                 </div>
             </div>
@@ -499,41 +498,32 @@
                 <img src="images/toys_arrow.svg" class="horizontal-tags">
 
                 <div class="vertun-caption">
-                    <div class="row">
-                        <p class="h4 vertun-header">Заведи домашнего робота!</p>
+                    <!--<div class="row">-->
+                    <p class="h4 vertun-header">Заведи домашнего робота!</p>
 
-                        <p class="h4 vertun-header">
-                            Подарите своему ребенку
-                            мягкого друга Вертуна
-                        </p>
+                    <p class="h4 vertun-header">
+                        Подарите своему ребенку
+                        мягкого друга Вертуна
+                    </p>
 
-                        <p>
-                            Мягкая игрушка “Вертун” изготовлена  в России
-                            из экологически чистых материалов. <br>
-                            <img src="images/mark3.svg" alt="Вертун" class="img-fluid vertun-age">
-                            Сертификаты прилагаются.
-                        </p>
+                    <p>
+                        Мягкая игрушка “Вертун” изготовлена  в России
+                        <img src="images/mark3.svg" alt="Вертун" class="img-fluid vertun-age">
+                        из экологически чистых материалов. <br>
+                        Сертификаты прилагаются.
+                    </p>
 
-                        <p class="vertun-price-1">999руб.</p>
-                    </div>
+                    <p class="vertun-price-1">999руб.</p>
 
-                    <div class="row d-flex justify-content-center">
-                        <p class="h4 vertun-price-2">799руб.</p>
-                    </div>
+                    <p class="vertun-price-2 text-center">799руб.</p>
 
-                    <div class="row d-flex justify-content-center">
-                        <p>до 31 декабря</p>
-                    </div>
+                    <p class="text-center">до 31 декабря</p>
                 </div>
             </div>
         </div>
 
         <div class="row py-4">
-            <div class="col-2"></div>
-
-            <div class="col-4"></div>
-
-            <div class="col-6 pl-5">
+            <div class="col-5 ml-auto pr-4">
                 <form action="/add-to-cart/{{ products.[4]._id }}" class="product-body pl-3" method="post">
                     <div class="row d-flex flex-row">
                         <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-5" name="productQty">
@@ -546,8 +536,11 @@
                     </div>
                 </form>
             </div>
+
+            <div class="col-1"></div>
         </div>
 
+        <!--Dashed border-->
         <div class="row">
             <div class="col-2"></div>
 
@@ -562,9 +555,9 @@
 
         <!--Shopping cart-->
         <div class="row">
-            <div class="col-3"></div>
+            <div class="col-2"></div>
 
-            <div class="col-6 cart-body">
+            <div class="col-8 cart-body">
                 <h2 class="cart-header pl-5">
                     <i class="material-icons">shopping_cart</i>
                     В корзине
@@ -574,20 +567,20 @@
                     <ol class="list-group pt-3">
                         {{# each productsArray }}
                             <li class="list-group-item d-flex flex-row">
-                                <div class="col-6">
-                                    <p class="pl-5">
+                                <div class="col-6 d-flex align-items-center">
+                                    <p class="mb-0 pl-5">
                                         {{ this.item.title }}
                                     </p>
                                 </div>
 
-                                <div class="col-2">
+                                <div class="col-3">
                                     <form>
                                         <div class="row">
-                                            <div class="col-10">
-                                                <input type="number" class="form-control no-spin" placeholder="{{ this.qty }}" min="1" max="10">
+                                            <div class="col-5">
+                                                <input type="number" class="form-control checkbox-style no-spin" placeholder="{{ this.qty }}" min="1" max="10">
                                             </div>
 
-                                            <div class="col-2">
+                                            <div class="col-7">
                                                 <label class="col-form-label">
                                                     шт.
                                                 </label>
@@ -596,26 +589,98 @@
                                     </form>
                                 </div>
 
-                                <div class="col-4 d-flex justify-content-end">
-                                    <p class="pr-5">
+                                <div class="col-3 d-flex justify-content-end align-items-center">
+                                    <p class="mb-0 pr-5">
                                         {{ this.price }}p
                                     </p>
+
+                                    <a href="/remove/{{ this.item._id }}">
+                                        <img class="responsive-icons" src="images/delete.svg" alt="Удалить товар.">
+                                    </a>
                                 </div>
                             </li>
                         {{/each}}
                     </ol>
 
-                    <p class="h3 cart-header pt-3 pl-5">
-                        Итого: {{ session.cart.totalPrice }}p
-                    </p>
+                    <div class="d-flex justify-content-between">
+                        <p class="h3 cart-header pt-3 pl-5">
+                            Итого: {{ session.cart.totalPrice }}p
+                        </p>
+
+                        <button type="button" class="modalBtn" data-toggle="modal" data-target="#formModal">к оформлению</button>
+
+                        <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content px-5 py-5">
+                                    <div class="modal-body">
+                                        <form action="/confirmed" method="post">
+                                            <div class="form-group row">
+                                                <label for="inputName" class="col-3 col-form-label">Имя</label>
+
+                                                <div class="col-9">
+                                                    <input type="text" class="form-control" id="inputName" placeholder="как к Вам обращаться">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="inputPhoneNumber" class="col-3 col-form-label">Телефон</label>
+
+                                                <div class="col-9">
+                                                    <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="для подтверждения заказа">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="inputAddress" class="col-3 col-form-label">Адрес доставки</label>
+
+                                                <div class="col-9">
+                                                    <input type="text" class="form-control" id="inputAddress" placeholder="для уточнения способа доставки">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="inputEmail" class="col-3 col-form-label">E-mail</label>
+
+                                                <div class="col-9">
+                                                    <input type="email" class="form-control" id="inputEmail">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="inputComments" class="col-3 col-form-label">Комменарий</label>
+
+                                                <div class="col-9">
+                                                    <input type="text" class="form-control" id="inputComments">
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div class="d-flex justify-content-end">
+                                            <button type="button" class="modalBtn" data-dismiss="modal" data-toggle="modal" data-target="#formModalConfirmed">отправить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="formModalConfirmed" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <p class="h3 text-center">ВАШ ЗАКАЗ ПРИНЯТ!</p>
+
+                                    <p class="text-center">В течение одного рабочего дня наш сотрудник свяжется с Вами.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 {{ else }}
                     <p class="cart-header">
-                        Корзина пуста.
+                        На данный момент у Вас нет покупок.
                     </p>
                 {{/ if }}
             </div>
 
-            <div class="col-3"></div>
+            <div class="col-2"></div>
         </div>
 
         <hr>

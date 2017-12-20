@@ -33,6 +33,10 @@ body {
     max-height: 100%;
 }
 
+button:focus {
+    outline: none;
+}
+
 .col-4 h3 {
     display: block;
     padding-top: 10rem;
@@ -144,7 +148,7 @@ body {
 }
 
 .responsive-header-2 {
-    padding-bottom: 2rem;
+    padding-bottom: 0.2rem;
     font-size: 1.2rem;
     font-size: 1.4vw;
 }
@@ -177,6 +181,11 @@ body {
     width: 14vw;
 }
 
+.responsive-icons {
+    width: 1vw;
+    height: 1vw;
+}
+
 .header-container-1 {
     position: relative;
     width: 35%;
@@ -191,11 +200,11 @@ body {
 
 
 
+
+
     /* Dropdowns */
 .dropbtn {
-    background-image: url("../images/down.svg");
-    background-repeat: no-repeat;
-    background-color: transparent;
+    background: transparent url("../images/down.svg") no-repeat;
     left: 100%;
     width: 4rem;
     /*height: 2rem;*/
@@ -241,7 +250,8 @@ body {
 }
 
 .checkbox-style {
-    min-width: 32px;
+    min-width: 36px;
+    font-size: 1vw;
     width: 2.5vw;
     height: 2.7vw;
     margin-right: 0.4vw;
@@ -256,9 +266,7 @@ body {
 }
 
 .button-1 {
-    background-image: url("../images/button_vkor.svg");
-    background-repeat: no-repeat;
-    background-color: transparent;
+    background: transparent url("../images/button_vkor.svg") no-repeat;
     border: none;
     width: 13.5vw;
     height: 2.7vw;
@@ -266,8 +274,7 @@ body {
 }
 
 .button-2 {
-    background-image: url("../images/mark_down.svg");
-    background-repeat: no-repeat;
+    background: url("../images/mark_down.svg") no-repeat;
     width: 5.5vw;
     height: 2.7vw;
 }
@@ -296,18 +303,31 @@ body {
 .vertun-price-1 {
     font-size: 1.6vw;
     text-decoration: line-through;
-    margin-top: -12%;
+    margin-top: -1rem;
 }
 
 .vertun-price-2 {
     font-size: 2vw;
     margin-bottom: 0;
+    margin-top: -1rem;
 }
 
 .vertun-age {
     display: inline;
     float: right;
+    margin-top: 1rem;
     width: 18%;
 }
+
+.modalBtn {
+    background: transparent url("../images/button_green.svg") no-repeat;
+    border: none;
+    width: 13.5vw;
+    height: 2.7vw;
+    font-size: 1.4vw;
+    margin-top: 1rem;
+    margin-right: 15px;
+}
+
 
 
