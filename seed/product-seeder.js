@@ -31,6 +31,20 @@ let products = [
     }),
 
     new Product({
+        title: 'Поддержка',
+        description: 'для дошкольных образовательных учреждений',
+        price: 8000,
+        quantity: 5
+    }),
+
+    new Product({
+        title: 'Поддержка',
+        description: 'для организаторов платных курсов',
+        price: 28000,
+        quantity: 5
+    }),
+
+    new Product({
         title: 'Вертун',
         price: 799,
         quantity: 5

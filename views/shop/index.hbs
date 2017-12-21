@@ -433,7 +433,6 @@
 
             <div class="col-8">
                 <div class="container">
-
                     <div class="d-flex flex-row-reverse">
                         <div class="dashed-border"></div>
                     </div>
@@ -486,7 +485,89 @@
         </div>
 
 
-        <!--Fifth item-->
+        <!--Fifth and sixth items-->
+        <div class="row">
+            <div class="col-2"></div>
+
+            <div class="col-8">
+                <div class="container">
+                    <div class="row d-flex flex-column align-items-center pb-3">
+                        <p class="h3 piktomir-header-1">От авторов ПиктоМира</p>
+
+                        <p class="h5 piktomir-header-2">поддержка, обновление и доступ к новым исполнителям в течении года</p>
+                    </div>
+
+                    <div class="row cart-body">
+                        <div class="col-10">
+                            <div class="container pt-2 px-0">
+                                <div class="form-check">
+                                    <label class="form-check-label form-row">
+                                        <div class="col-8">
+                                            <input type="radio" class="form-check-input" name="radio" id="first-checkbox" value="{{ products.[4]._id }}" checked>
+                                            {{ products.[4].description }}
+                                        </div>
+
+                                        <div class="col-4">
+                                            {{ products.[4].price }}руб.
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label form-row">
+                                        <div class="col-8">
+                                            <input type="radio" class="form-check-input" name="radio" id="second-checkbox" value="{{ products.[5]._id }}">
+                                            {{ products.[5].description }}
+                                        </div>
+
+                                        <div class="col-4">
+                                            {{ products.[5].price }}руб.
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <script>
+                                let window.flag = 1;
+
+                                // checkboxValidate(flag);
+                            </script>
+
+                            {{# if flag }}
+                                <form action="/add-to-cart/{{ products.[4]._id }}" method="post" class="mt-5">
+                                    <div class="row d-flex flex-row">
+                                        <button type="submit" class="button-1 mr-1"></button>
+
+                                        <a href="#target" role="button" class="button-2 pt-2"></a>
+                                    </div>
+                                </form>
+                            {{ else }}
+                                <form action="/add-to-cart/{{ products.[5]._id }}" method="post" class="mt-5">
+                                    <div class="row d-flex flex-row">
+                                        <button type="submit" class="button-1 mr-1"></button>
+
+                                        <a href="#target" role="button" class="button-2 pt-2"></a>
+                                    </div>
+                                </form>
+                            {{/ if }}
+                        </div>
+                        
+                        <div class="col-2">
+                            <img class="img-fluid rounded" src="images/piktomir.png" alt="Пиктомир">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <div class="dashed-border-full"></div>
+                </div>
+            </div>
+
+            <div class="col-2"></div>
+        </div>
+
+
+        <!--Seventh item-->
         <div class="row pt-4">
             <div class="col-2"></div>
 
@@ -515,7 +596,7 @@
 
                     <p class="vertun-price-1">999руб.</p>
 
-                    <p class="vertun-price-2 text-center">799руб.</p>
+                    <p class="vertun-price-2 text-center">{{ products.[6].price }}руб.</p>
 
                     <p class="text-center">до 31 декабря</p>
                 </div>
@@ -526,9 +607,9 @@
             <div class="col-5 ml-auto pr-4">
                 <form action="/add-to-cart/{{ products.[4]._id }}" class="product-body pl-3" method="post">
                     <div class="row d-flex flex-row">
-                        <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-5" name="productQty">
+                        <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-7" name="productQty">
 
-                        <label for="merch-5" class="col-form-label">шт.</label>
+                        <label for="merch-7" class="col-form-label">шт.</label>
 
                         <button type="submit" class="button-1 mr-1"></button>
 
@@ -685,6 +766,7 @@
 
         <hr>
 
+        <!--Footer-->
         <div class="row">
             <div class="col-3 d-flex justify-content-end align-items-end">
                 <img src="images/4_1.png" class="img-fluid footer-1">

@@ -1,8 +1,8 @@
-function dropdownAction(elemId) {
+let dropdownAction = (elemId) => {
     document.getElementById(elemId).classList.toggle("show");
-}
+};
 
-window.onclick = function(event) {
+window.onclick = (event) => {
     if (!event.target.matches('.dropbtn')) {
         let dropdowns = document.getElementsByClassName("dropdown-content");
 
@@ -14,4 +14,14 @@ window.onclick = function(event) {
             }
         }
     }
-}
+};
+
+let checkboxValidate = (flag) => {
+    if (document.getElementById('second-checkbox').checked) {
+        flag = 0;
+
+        return flag;
+    }
+
+    return flag;
+};

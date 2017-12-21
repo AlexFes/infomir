@@ -20,7 +20,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/add-to-cart/:id', (req, res, next) => {
     let productId = req.params.id;
-    let productQty = req.body.productQty;
+    let productQty = req.body.productQty || 1;
 
     let cart = new Cart(req.session.cart ? req.session.cart : {});
 
@@ -33,6 +33,22 @@ router.post('/add-to-cart/:id', (req, res, next) => {
 
             res.redirect('/#shop');
         });
+});
+
+router.post('/add-support', (req, res, next) => {
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    res.redirect('/#shop');
+
+    // Product.findById(productId)
+    //     .then(product => {
+    //         cart.add(product, product._id, 1);
+    //
+    //         req.session.cart = cart;
+    //         console.log(req.session.cart);
+    //
+    //         res.redirect('/#shop');
+    //     });
 });
 
 router.get('/remove/:id', (req, res, next) => {

@@ -329,5 +329,14 @@ button:focus {
     margin-right: 15px;
 }
 
+.piktomir-header-1 {
+    font-size: 2vw;
+}
 
+.piktomir-header-2 {
+    font-size: 1.5vw;
+}
 
+.form-check-input {
+    margin-top: 0.4em;
+}
