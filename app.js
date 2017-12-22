@@ -14,7 +14,7 @@ let users = require('./routes/users');
 
 let app = express();
 
-mongoose.connect('mongodb://localhost:27017/shopping', {useMongoClient: true});
+module.exports = mongoose.connect('mongodb://localhost:27017/shopping', {useMongoClient: true});
 
 // view engine setup
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));

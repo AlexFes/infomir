@@ -16,12 +16,7 @@ window.onclick = (event) => {
     }
 };
 
-let checkboxValidate = (flag) => {
-    if (document.getElementById('second-checkbox').checked) {
-        flag = 0;
-
-        return flag;
-    }
-
-    return flag;
-};
+function formSubmit () {
+    //document.getElementById('formModalConfirmed').classList.add('show');
+    document.getElementById('checkout-form').submit();
+}
