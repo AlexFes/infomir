@@ -28,7 +28,7 @@ app.use(session({
     secret: 'mysupersecret',
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection}),          //to use already existing connection
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),          //to use already existing connection
     cookie: { maxAge: 180 * 60 * 1000 }                                         //expiration time for session in milliseconds
 }));
 app.use(express.static(path.join(__dirname, 'public')));
