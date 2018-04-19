@@ -1,59 +1,44 @@
 let Product = require('../models/product');
 let mongoose = require('mongoose');
 
+let saveProducts = [];
+
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/shopping', {useMongoClient: true});
 
 let products = [
     new Product({
         title: 'Образовательный набор',
-        quantity: 5
+        price: 38500
     }),
 
     new Product({
-        title: 'Робототехнический набор №1',
-        description: 'LEGO Mindstorms EV3 31313',
-        price: 14000,
-        quantity: 5
+        title: 'Дополнительный комплект для 25 обучаемых',
+        price: 1800
     }),
 
     new Product({
-        title: 'Робототехнический набор №2',
-        description: 'LEGO Mindstorms Education EV3',
-        price: 13000,
-        quantity: 5
+        title: 'Поддержка для дошкольных образовательных учреждений',
+        price: 8000
     }),
 
     new Product({
-        title: 'Робототехнический набор №3',
-        description: 'Обучаюший робот ПиктоМир',
-        quantity: 5
-    }),
-
-    new Product({
-        title: 'Поддержка',
-        description: 'для дошкольных образовательных учреждений',
-        price: 8000,
-        quantity: 5
-    }),
-
-    new Product({
-        title: 'Поддержка',
-        description: 'для организаторов платных курсов',
-        price: 28000,
-        quantity: 5
+        title: 'Поддержка для организаторов платных курсов',
+        price: 28000
     }),
 
     new Product({
         title: 'Вертун',
-        price: 799,
-        quantity: 5
+        price: 1000
     })
 ];
 
-products.reduce((p, product)=> {
-    return p.then(() => product.save());
-}, Promise.resolve())
-.then(() => {
-    mongoose.disconnect();
-});
+for (let product of products) {
+    saveProducts.push(product.save());
+}
+
+Promise.all(saveProducts)
+    .then(() => {
+        mongoose.disconnect();
+    });
+

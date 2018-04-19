@@ -1,0 +1,306 @@
+<!--First item-->
+<div id="shop" class="row">
+    <div class="col-2"></div>
+
+    <div class="col-8">
+        <div class="container">
+            <div class="dashed-border"></div>
+
+            <div class="row product-body">
+                <div class="col-7 d-flex flex-column">
+                    <p class="h4 product-title">
+                        {{ products.[0].title}}
+                    </p>
+
+                    <ol>
+                        <li>
+                            Радиоуправляемый робот "Ползун" в комплекте с зарядным устройством, двумя пультами для ручного
+                            управления, программным обеспечением для компьютерного управления. Гарантия 1 год.
+                        </li>
+
+                        <li>
+                            Комплект сочленяемых ковриков (30х30 см) для сборки игровых полей для детей и роботов - 40 шт
+                        </li>
+
+                        <li>
+                            Комплект для 25 обучаемых:
+                            <ul>
+                                <li>памятка-магнит с командами - 27 шт.</li>
+                                <li>бланк диплома 1 ступени - 27 шт.</li>
+                                <li>бланк диплома 2 ступени - 27 шт.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="col-5">
+                    <img class="img-fluid rounded" src="images/nabor_1600.png" alt="Образовательный набор">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-2"></div>
+
+    <div class="col-8">
+        <div class="container">
+            <div class="row product-body">
+                <div class="col-5">
+                    <img class="img-fluid rounded" src="images/robot_1600.png" alt="Робототехнический набор №1">
+                </div>
+
+                <div class="col-7 d-flex flex-column">
+                    <ol start="4">
+                        <li>Комплект пиктограмм для работы на магнитной доске с командами роботов и командами Пиктомира - 64 шт.</li>
+
+                        <li>Комплект мягких игрушек: <br/> Робот Вертун - 1шт. <br/> Робот Двигун - 1шт. <br/> Робот Зажигун - 1шт.</li>
+
+                        <li>
+                            Программные и методические материалы для проведения годового цикла занятий "Алгоритмика для школьников" в
+                            подготовительной группе ДОУ с использованием системы Пиктомир, в том числе и для управления роботом "Ползун"
+                            на электронном носителе
+                        </li>
+
+                        <li>
+                            Лицензия на получение технической и методической поддержки - 1 год
+                        </li>
+                    </ol>
+
+                    <h4>
+                        Цена: {{ products.[0].price }} руб.
+                    </h4>
+
+                    <form action="/add-to-cart/{{ products.[0]._id }}" method="post">
+                        <div class="row d-flex flex-row">
+                            <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-4" name="productQty">
+
+                            <label for="merch-4" class="col-form-label">шт.</label>
+
+                            <button type="submit" class="button-1 mr-1"></button>
+
+                            <a href="#target" role="button" class="button-2 pt-2"></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-2"></div>
+</div>
+
+
+<!--Second item-->
+<div class="row">
+    <div class="col-2"></div>
+
+    <div class="col-8">
+        <div class="container">
+            <div class="dashed-border"></div>
+
+            <div class="row product-body">
+                <div class="col-7 d-flex flex-column">
+                    <p class="h4 product-title">
+                        {{ products.[1].title }}
+                    </p>
+
+                    <ol>
+                        <li>Памятка-магнит с командами - 25 шт.</li>
+
+                        <li>Бланк диплома 1 ступени — 25 шт.</li>
+
+                        <li>Бланк диплома 2 ступени — 25 шт.</li>
+                    </ol>
+
+                    <h4>
+                        Цена: {{ products.[1].price }} руб.
+                    </h4>
+
+                    <form action="/add-to-cart/{{ products.[1]._id }}" method="post">
+                        <div class="row d-flex flex-row">
+                            <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-4" name="productQty">
+
+                            <label for="merch-4" class="col-form-label">шт.</label>
+
+                            <button type="submit" class="button-1 mr-1"></button>
+
+                            <a href="#target" role="button" class="button-2 pt-2"></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-2"></div>
+
+    <div class="col-8">
+        <div class="d-flex justify-content-center">
+            <div class="dashed-border-full"></div>
+        </div>
+    </div>
+
+    <div class="col-2"></div>
+</div>
+
+
+<!--Third and fourth items-->
+<div class="row">
+    <div class="col-2"></div>
+
+    <div class="col-8">
+        <div class="container">
+            <div class="row d-flex flex-column align-items-center pb-3">
+                <p class="h3 piktomir-header-1">От авторов ПиктоМира</p>
+
+                <p class="h5 piktomir-header-2">поддержка, обновление и доступ к новым исполнителям в течении года</p>
+            </div>
+
+            <div class="row cart-body">
+                <div class="col-10">
+                    <div class="container pt-2 px-0">
+                        <form action="/add-support" method="post" id="support-form">
+                            <div class="form-check">
+                                <label class="form-check-label form-row">
+                                    <div class="col-8">
+                                        <input type="radio" class="form-check-input" name="radio" id="first-checkbox" value="{{ products.[2]._id }}" checked>
+                                        {{ products.[2].title }}
+                                    </div>
+
+                                    <div class="col-4">
+                                        {{ products.[2].price }}руб.
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <label class="form-check-label form-row">
+                                    <div class="col-8">
+                                        <input type="radio" class="form-check-input" name="radio" id="second-checkbox" value="{{ products.[3]._id }}">
+                                        {{ products.[3].title }}
+                                    </div>
+
+                                    <div class="col-4">
+                                        {{ products.[3].price }}руб.
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="row d-flex flex-row mt-4">
+                                <button type="submit" class="button-1 mr-1"></button>
+
+                                <a href="#target" role="button" class="button-2 pt-2"></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <img class="img-fluid rounded" src="images/piktomir.png" alt="Пиктомир">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="dashed-border-full"></div>
+        </div>
+    </div>
+
+    <div class="col-2"></div>
+</div>
+
+
+<!--Fifth item-->
+<div class="row pt-4">
+    <div class="col-2"></div>
+
+    <div class="col-4 d-flex justify-content-center align-items-center pr-5">
+        <img src="images/vertun_440.png" class="img-fluid rounded-circle vertun-style">
+    </div>
+
+    <div class="col-6 d-flex justify-content-center align-items-center">
+        <img src="images/toys_arrow.svg" class="horizontal-tags">
+
+        <div class="vertun-caption">
+            <p class="h4 vertun-header">Заведи домашнего робота!</p>
+
+            <p class="h4 vertun-header">
+                Подарите своему ребенку
+                мягкого друга Вертуна
+            </p>
+
+            <p>
+                Мягкая игрушка “Вертун” изготовлена  в России
+                <img src="images/mark3.svg" alt="Вертун" class="img-fluid vertun-age">
+                из экологически чистых материалов. <br>
+                Сертификаты прилагаются.
+            </p>
+
+            <p class="vertun-price-2 text-center">{{ products.[4].price }}руб.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row py-4">
+    <div class="col-5 ml-auto pr-4">
+        <form action="/add-to-cart/{{ products.[4]._id }}" class="product-body pl-3" method="post">
+            <div class="row d-flex flex-row">
+                <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-7" name="productQty">
+
+                <label for="merch-7" class="col-form-label">шт.</label>
+
+                <button type="submit" class="button-1 mr-1"></button>
+
+                <a href="#target" role="button" class="button-2 pt-2"></a>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-1"></div>
+</div>
+
+<!--Dashed border-->
+<div class="row">
+    <div class="col-2"></div>
+
+    <div class="col-8">
+        <div id="target" class="d-flex justify-content-center">
+            <div class="dashed-border-full"></div>
+        </div>
+    </div>
+
+    <div class="col-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-8 ml-auto mr-auto px-5">
+        <h2>Скидка!</h2>
+
+        <p class="mb-0">
+            При заказе мягких игрушек вместе с <strong>Образовательным набором</strong> или при заказе игрушек <strong>Вертун</strong>,
+            <strong>Двигун</strong> и <strong>Зажигун</strong> в суммарном количестве 9 или более штук цена за одну игрушку становится
+        </p>
+
+        <div class="row">
+            <h1 class="offset-9">850p.</h1>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
