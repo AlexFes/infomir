@@ -244,8 +244,17 @@ button:focus {
     margin-top: 1rem;
 }
 
+.dropdown-content-store {
+    display: none;
+    margin-top: 1rem;
+}
+
 .show {
     display: flex;
+}
+
+.show-store {
+    display: block;
 }
 
 #dropdown-2 {
