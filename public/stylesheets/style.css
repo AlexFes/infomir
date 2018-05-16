@@ -9,6 +9,12 @@
     }
 }
 
+body {
+    font-family: 'EvolventaRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
 hr {
     border: solid 1px black;
     margin-top: 3rem;
@@ -67,7 +73,7 @@ button:focus {
     background: #00bab5;
     position: absolute;
     top: 0;
-    height: 342px;
+    height: 412px;
     width: 100%;
     z-index: -1;
 }
@@ -98,7 +104,7 @@ button:focus {
 }
 
 .footer-2 {
-    width: 75%;
+    width: 85%;
 }
 
 .main-image-1 {
@@ -111,8 +117,27 @@ button:focus {
     height: 8vw;
 }
 
+.head1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/head1-01.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
-
+.head2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/head2-01.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 
 
@@ -126,9 +151,9 @@ button:focus {
 .contacts_caption {
     position: absolute;
     right: 12%;
-    left: 68%;
+    left: 77%;
     width: 20%;
-    top: 1.2rem;
+    top: 3.2rem;
 }
 
 .caption {
@@ -373,4 +398,12 @@ button:focus {
 .list-group-item {
     padding-left: 0;
     padding-right: 2vw;
+}
+
+#hidden-cart-item {
+    display: none !important;
+}
+
+.hidden-cart-total {
+    display: none !important;
 }

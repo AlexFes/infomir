@@ -18,21 +18,8 @@ window.onclick = (event) => {
             }
         }
     }
-
-    if (!event.target.matches('.dropbtn-store')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content-store");
-
-        for (let i = 0; i < dropdowns.length; i++) {
-            let openDropdown = dropdowns[i];
-
-            if (openDropdown.classList.contains('show-store')) {
-                openDropdown.classList.remove('show-store');
-            }
-        }
-    }
 };
 
 function formSubmit () {
-    //document.getElementById('formModalConfirmed').classList.add('show');
     document.getElementById('checkout-form').submit();
 }

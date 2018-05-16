@@ -33,7 +33,7 @@ router.post('/add-to-cart/:id', (req, res, next) => {
             req.session.cart = cart;
             console.log(req.session.cart);
 
-            res.redirect('/#shop');
+            res.send(cart);
         });
 });
 
@@ -47,9 +47,11 @@ router.post('/add-support', (req, res, next) => {
             cart.add(product, product._id, 1);
 
             req.session.cart = cart;
+
+            cart.currentSupportId = product._id;
             console.log(req.session.cart);
 
-            res.redirect('/#shop');
+            res.send(cart);
         });
 });
 
@@ -71,7 +73,7 @@ router.post('/checkout', (req, res, next) => {
     });
 });
 
-router.get('/remove/:id', (req, res, next) => {
+router.post('/remove/:id', (req, res, next) => {
     let productId = req.params.id;
 
     let cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -79,7 +81,7 @@ router.get('/remove/:id', (req, res, next) => {
     cart.removeItem(productId);
     req.session.cart = cart;
 
-    res.redirect('/#target');
+    res.send(cart);
 });
 
 module.exports = router;

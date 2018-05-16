@@ -56,21 +56,20 @@
                 <div class="col-2"></div>
             </div>
 
-            <!--Shopping cart-->
             <div class="row">
                 <div class="col-2"></div>
 
                 <div class="col-8 cart-body">
-                    <h2 class="cart-header pl-5">
-                        <i class="material-icons">shopping_cart</i>
-                        В корзине
-                    </h2>
-
                     {{# if productsArray }}
-                        <ol class="list-group pt-3">
+                        <h2 class="cart-header pl-5">
+                            <i class="material-icons">shopping_cart</i>
+                            В корзине
+                        </h2>
+
+                        <ol class="list-group pt-3" id="shopping-cart">
                             {{# each productsArray }}
-                                <li class="list-group-item d-flex flex-row">
-                                    <div class="col-6 d-flex align-items-center">
+                                <li class="list-group-item d-flex flex-row" id="cart-item{{ this.item._id }}">
+                                    <div class="col-6 d-flex align-items-center cart-item-title">
                                         <p class="mb-0 pl-5">
                                             {{ this.item.title }}
                                         </p>
@@ -80,7 +79,7 @@
                                         <form>
                                             <div class="row">
                                                 <div class="col-5">
-                                                    <input type="number" class="form-control checkbox-style no-spin" placeholder="{{ this.qty }}" min="1" max="10">
+                                                    <input type="number" class="form-control checkbox-style no-spin cart-item-qty" value="{{ this.qty }}" min="1" max="10">
                                                 </div>
 
                                                 <div class="col-7">
@@ -92,12 +91,12 @@
                                         </form>
                                     </div>
 
-                                    <div class="col-3 d-flex justify-content-end align-items-center">
+                                    <div class="col-3 d-flex justify-content-end align-items-center cart-item-price">
                                         <p class="mb-0 pr-5">
                                             {{ this.price }}p
                                         </p>
 
-                                        <a href="/remove/{{ this.item._id }}">
+                                        <a class="cart-item-remove" onclick="removeItem('{{ this.item._id }}')">
                                             <img class="responsive-icons" src="images/delete.svg" alt="Удалить товар.">
                                         </a>
                                     </div>
@@ -105,8 +104,8 @@
                             {{/each}}
                         </ol>
 
-                        <div class="d-flex justify-content-between">
-                            <p class="h3 cart-header pt-3 pl-5">
+                        <div class="d-flex justify-content-between" id="cart-total-price">
+                            <p class="h3 cart-header pt-3 pl-5 cart-total-price-inner">
                                 Итого: {{ session.cart.totalPrice }}p
                             </p>
 
@@ -115,9 +114,26 @@
                             {{> modal }}
                         </div>
                     {{ else }}
-                        <p class="cart-header">
+                        <h2 class="cart-header pl-5">
+                            <i class="material-icons">shopping_cart</i>
+                            В корзине
+                        </h2>
+
+                        <p class="cart-header cart-header-temporary">
                             На данный момент у Вас нет покупок.
                         </p>
+
+                        <ol class="list-group pt-3" id="shopping-cart"></ol>
+
+                        <div class="d-flex justify-content-between hidden-cart-total" id="cart-total-price">
+                            <p class="h3 cart-header pt-3 pl-5 cart-total-price-inner">
+                                Итого: {{ session.cart.totalPrice }}p
+                            </p>
+
+                            <button type="button" class="modalBtn" data-toggle="modal" data-target="#formModal">к оформлению</button>
+
+                            {{> modal }}
+                        </div>
                     {{/ if }}
                 </div>
 
@@ -135,7 +151,9 @@
             </div>
 
             <div class="col-6 d-flex justify-content-center align-items-end">
-                <img src="images/4_2.png" class="img-fluid footer-2">
+                <a href="https://ecceconference.com/" style="position: absolute; width:100%; height:100%"></a>
+
+                <img src="images/4_2_2.svg" class="img-fluid footer-2">
             </div>
 
             <div class="col-3"></div>
@@ -143,8 +161,61 @@
     </div>
 </div>
 
-<footer id="footer"></footer>
+<li class="list-group-item d-flex flex-row" id="hidden-cart-item">
+    <div class="col-6 d-flex align-items-center cart-item-title"></div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <div class="col-3">
+        <form>
+            <div class="row">
+                <div class="col-5">
+                    <input type="number" class="form-control checkbox-style no-spin cart-item-qty" value="" min="1" max="10">
+                </div>
+
+                <div class="col-7">
+                    <label class="col-form-label">
+                        шт.
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-3 d-flex justify-content-end align-items-center cart-item-price">
+        <a class="cart-item-remove" onclick="removeItem(this.id)">
+            <img class="responsive-icons" src="images/delete.svg" alt="Удалить товар.">
+        </a>
+    </div>
+</li>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    function removeItem(itemId) {
+        $.ajax({
+            type: 'POST',
+            url: '/remove/' + itemId,
+        }).done(function(productsArray) {
+            $('#cart-item' + itemId).remove();
+
+            $('#cart-total-price .cart-total-price-inner').remove();
+
+            if (productsArray.totalPrice) {
+                $(`<p class="h3 cart-header pt-3 pl-5 cart-total-price-inner">Итого: ${productsArray.totalPrice}p</p>`).prependTo('#cart-total-price');
+            } else {
+                $('#cart-total-price').addClass('hidden-cart-total');
+                $('<p class="cart-header cart-header-temporary">На данный момент у Вас нет покупок</p>').appendTo('.cart-body');
+            }
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+

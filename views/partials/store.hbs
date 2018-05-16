@@ -9,7 +9,7 @@
             <div class="row product-body">
                 <div class="col-7 d-flex flex-column">
                     <p class="h4 product-title">
-                        {{ products.[0].title}}
+                        {{ products.[0].title }}
                     </p>
 
                     <ol>
@@ -74,17 +74,15 @@
                         Цена: {{ products.[0].price }} руб.
                     </h4>
 
-                    <form action="/add-to-cart/{{ products.[0]._id }}" method="post">
-                        <div class="row d-flex flex-row">
-                            <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-4" name="productQty">
+                    <div class="row d-flex flex-row">
+                        <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-1" name="productQty">
 
-                            <label for="merch-4" class="col-form-label">шт.</label>
+                        <label for="merch-1" class="col-form-label">шт.</label>
 
-                            <button type="submit" class="button-1 mr-1"></button>
+                        <button type="button" onclick="addToCart('{{ products.[0]._id }}', this.className)" class="button-1 mr-1 merch-1"></button>
 
-                            <a href="#target" role="button" class="button-2 pt-2"></a>
-                        </div>
-                    </form>
+                        <a href="#target" role="button" class="button-2 pt-2"></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,7 +90,6 @@
 
     <div class="col-2"></div>
 </div>
-
 
 <!--Second item-->
 <div class="row">
@@ -120,17 +117,15 @@
                         Цена: {{ products.[1].price }} руб.
                     </h4>
 
-                    <form action="/add-to-cart/{{ products.[1]._id }}" method="post">
-                        <div class="row d-flex flex-row">
-                            <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-4" name="productQty">
+                    <div class="row d-flex flex-row">
+                        <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-2" name="productQty">
 
-                            <label for="merch-4" class="col-form-label">шт.</label>
+                        <label for="merch-2" class="col-form-label">шт.</label>
 
-                            <button type="submit" class="button-1 mr-1"></button>
+                        <button type="button" onclick="addToCart('{{ products.[1]._id }}', this.className)" class="button-1 mr-1 merch-2"></button>
 
-                            <a href="#target" role="button" class="button-2 pt-2"></a>
-                        </div>
-                    </form>
+                        <a href="#target" role="button" class="button-2 pt-2"></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,39 +162,37 @@
             <div class="row cart-body">
                 <div class="col-10">
                     <div class="container pt-2 px-0">
-                        <form action="/add-support" method="post" id="support-form">
-                            <div class="form-check">
-                                <label class="form-check-label form-row">
-                                    <div class="col-8">
-                                        <input type="radio" class="form-check-input" name="radio" id="first-checkbox" value="{{ products.[2]._id }}" checked>
-                                        {{ products.[2].title }}
-                                    </div>
+                        <div class="form-check">
+                            <label class="form-check-label form-row">
+                                <div class="col-8">
+                                    <input type="radio" class="form-check-input add-support" name="radio" id="first-checkbox" value="{{ products.[2]._id }}" checked>
+                                    {{ products.[2].title }}
+                                </div>
 
-                                    <div class="col-4">
-                                        {{ products.[2].price }}руб.
-                                    </div>
-                                </label>
-                            </div>
+                                <div class="col-4">
+                                    {{ products.[2].price }}руб.
+                                </div>
+                            </label>
+                        </div>
 
-                            <div class="form-check">
-                                <label class="form-check-label form-row">
-                                    <div class="col-8">
-                                        <input type="radio" class="form-check-input" name="radio" id="second-checkbox" value="{{ products.[3]._id }}">
-                                        {{ products.[3].title }}
-                                    </div>
+                        <div class="form-check">
+                            <label class="form-check-label form-row">
+                                <div class="col-8">
+                                    <input type="radio" class="form-check-input add-support" name="radio" id="second-checkbox" value="{{ products.[3]._id }}">
+                                    {{ products.[3].title }}
+                                </div>
 
-                                    <div class="col-4">
-                                        {{ products.[3].price }}руб.
-                                    </div>
-                                </label>
-                            </div>
+                                <div class="col-4">
+                                    {{ products.[3].price }}руб.
+                                </div>
+                            </label>
+                        </div>
 
-                            <div class="row d-flex flex-row mt-4">
-                                <button type="submit" class="button-1 mr-1"></button>
+                        <div class="row d-flex flex-row mt-4">
+                            <button type="button" onclick="addSupport()" class="button-1 mr-1"></button>
 
-                                <a href="#target" role="button" class="button-2 pt-2"></a>
-                            </div>
-                        </form>
+                            <a href="#target" role="button" class="button-2 pt-2"></a>
+                        </div>
                     </div>
                 </div>
 
@@ -244,24 +237,22 @@
                 Сертификаты прилагаются.
             </p>
 
-            <p class="vertun-price-2 text-center">{{ products.[4].price }}руб.</p>
+            <p class="vertun-price-2 text-center">{{ products.[4].price }} р</p>
         </div>
     </div>
 </div>
 
 <div class="row py-4">
     <div class="col-5 ml-auto pr-4">
-        <form action="/add-to-cart/{{ products.[4]._id }}" class="product-body pl-3" method="post">
-            <div class="row d-flex flex-row">
-                <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-7" name="productQty">
+        <div class="row d-flex flex-row">
+            <input type="number" class="form-control no-spin checkbox-style" value="1" min="1" max="10" id="merch-5" name="productQty">
 
-                <label for="merch-7" class="col-form-label">шт.</label>
+            <label for="merch-5" class="col-form-label">шт.</label>
 
-                <button type="submit" class="button-1 mr-1"></button>
+            <button type="button" onclick="addToCart('{{ products.[4]._id }}', this.className)" class="button-1 mr-1 merch-5"></button>
 
-                <a href="#target" role="button" class="button-2 pt-2"></a>
-            </div>
-        </form>
+            <a href="#target" role="button" class="button-2 pt-2"></a>
+        </div>
     </div>
 
     <div class="col-1"></div>
@@ -290,11 +281,58 @@
         </p>
 
         <div class="row">
-            <h1 class="offset-9">850p.</h1>
+            <h1 class="offset-9">850 p</h1>
         </div>
     </div>
 </div>
 
+<script>
+    function addToCart(productId, inputId) {
+        $.ajax({
+            type: 'POST',
+            url: '/add-to-cart/' + productId,
+            data: $('#' + inputId).serialize(),
+            dataType: 'json'
+        }).done(function(productsArray) {
+            $('#cart-item' + productId).remove();
+            $('.cart-header-temporary').remove();
+            $("#hidden-cart-item").clone().prop('id', 'cart-item' + productId).appendTo("#shopping-cart");
+
+            $(`<p class="mb-0 pl-5">${productsArray.items[productId].item.title}</p>`).appendTo('#cart-item' + productId + ' .cart-item-title');
+            $(`<p class="mb-0 pr-5">${productsArray.items[productId].price}p</p>`).prependTo('#cart-item' + productId + ' .cart-item-price');
+            $('#cart-item' + productId + ' .cart-item-qty').prop("value", productsArray.items[productId].qty);
+            $('#cart-item' + productId + ' .cart-item-price .cart-item-remove').prop("id", productId);
+
+            $('#cart-total-price').removeClass('hidden-cart-total');
+            $('#cart-total-price .cart-total-price-inner').remove();
+            $(`<p class="h3 cart-header pt-3 pl-5 cart-total-price-inner">Итого: ${productsArray.totalPrice}p</p>`).prependTo('#cart-total-price');
+        });
+    }
+
+    function addSupport() {
+        $.ajax({
+            type: 'POST',
+            url: '/add-support',
+            data: $('.add-support').serialize(),
+            dataType: 'json'
+        }).done(function(productsArray) {
+            let productId = productsArray.currentSupportId;
+
+            $('#cart-item' + productId).remove();
+            $('.cart-header-temporary').remove();
+            $("#hidden-cart-item").clone().prop('id', 'cart-item' + productId).appendTo("#shopping-cart");
+
+            $(`<p class="mb-0 pl-5">${productsArray.items[productId].item.title}</p>`).appendTo('#cart-item' + productId + ' .cart-item-title');
+            $(`<p class="mb-0 pr-5">${productsArray.items[productId].price}p</p>`).prependTo('#cart-item' + productId + ' .cart-item-price');
+            $('#cart-item' + productId + ' .cart-item-qty').prop("value", productsArray.items[productId].qty);
+            $('#cart-item' + productId + ' .cart-item-price .cart-item-remove').prop("id", productId);
+
+            $('#cart-total-price').removeClass('hidden-cart-total');
+            $('#cart-total-price .cart-total-price-inner').remove();
+            $(`<p class="h3 cart-header pt-3 pl-5 cart-total-price-inner">Итого: ${productsArray.totalPrice}p</p>`).prependTo('#cart-total-price');
+        });
+    }
+</script>
 
 
 
