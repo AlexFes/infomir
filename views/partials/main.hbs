@@ -1,5 +1,15 @@
 <div id="greyline"></div>
 
+<div class="row d-flex justify-content-center pt-3">
+    <div class="col-8 d-flex justify-content-end">
+        <button type="button" data-toggle="modal" data-target="#authModal" class="btn btn-outline-primary">Зарегистрироваться</button>
+        <button type="button" data-toggle="modal" data-target="#loginModal" class="btn btn-outline-success ml-3">Войти</button>
+    </div>
+
+    {{> authModal }}
+    {{> loginModal }}
+</div>
+
 <div class="row pt-5">
     <div class="col-7 d-flex flex-column justify-content-center align-items-center">
         <img class="horizontal-tags" src="images/1_1.png" />
