@@ -270,6 +270,7 @@ button:focus {
 
 .dropdown-content-store {
     margin-top: 1rem;
+    display: block;
 }
 
 .show {

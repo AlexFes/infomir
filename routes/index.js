@@ -1,6 +1,6 @@
 let express = require('express');
-let mongoose = require('mongoose');
 let router = express.Router();
+let mongoose = require('mongoose');
 
 let Cart = require('../models/cart');
 let Product = require('../models/product');

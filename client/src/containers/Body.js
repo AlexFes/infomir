@@ -2,12 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions/actions';
-import Store from './Store';
+import Market from './Market';
+import Cart from './Cart';
 
 class Body extends React.Component {
+    componentDidMount() {
+        this.props.fetchInitialData();
+    }
+
     renderDropdown() {
         switch (this.props.onclick.clicked) {
-            case 1:
+            case true:
                 return (
                     <div className="row dropdown-content responsive-main-paragraph pt-5 " id="dropdown-1">
                         <div className="col-2"/>
@@ -66,10 +71,20 @@ class Body extends React.Component {
         }
     }
 
-    renderStore() {
+    renderMarket(products) {
         switch (this.props.onclick.clickedStore) {
-            case 1:
-                return (<Store />);
+            case true:
+                return (<Market products={products}/>);
+
+            default:
+                return;
+        }
+    }
+
+    renderCart(cart) {
+        switch (this.props.onclick.clickedStore) {
+            case true:
+                return (<Cart cart={cart}/>);
 
             default:
                 return;
@@ -207,7 +222,9 @@ class Body extends React.Component {
 
                 <hr/>
 
-                { this.renderStore() }
+                { this.renderMarket(this.props.store.products) }
+
+                { this.renderCart(this.props.store.cart) }
             </div>
         );
     }
@@ -215,7 +232,8 @@ class Body extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        onclick: state.onclick
+        onclick: state.onclick,
+        store: state.store
     };
 };
 
@@ -227,6 +245,10 @@ const mapDispatchToProps = (dispatch) => {
 
         onclickStoreAction: (clicked) => {
             dispatch(actions.onclickStoreAction(clicked));
+        },
+
+        fetchInitialData: () => {
+            dispatch(actions.fetchInitialData());
         }
     };
 };

@@ -9,15 +9,12 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const index = require('./routes/index');
 const users = require('./routes/users');
+const store = require('./routes/store');
 
 const app = express();
 
 module.exports = mongoose.connect('mongodb://localhost:27017/shopping', {useMongoClient: true});
-
-app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
-app.set('view engine', '.hbs');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -37,8 +34,15 @@ app.use((req, res, next) => {
    next();
 });
 
-app.use('/', index);
 app.use('/user', users);
+app.use('/store', store);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 app.use(function(req, res, next) {
     let err = new Error('Not Found');

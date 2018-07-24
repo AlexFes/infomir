@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import { onclickReducer } from './reducers';
+import * as reducers from './reducers';
 
-export default combineReducers({ onclick: onclickReducer });
+export default combineReducers({ onclick: reducers.onclickReducer, store: reducers.storeReducer});

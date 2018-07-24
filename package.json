@@ -5,8 +5,10 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "dev-debug": "concurrently \"npm run client\" \"npm run server-debug\"",
     "client": "npm start --prefix client",
-    "server": "node bin/www"
+    "server": "nodemon bin/www",
+    "server-debug": "node $NODE_DEBUG_OPTION bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,6 +23,7 @@
     "hbs": "~4.0.1",
     "mongoose": "^4.13.7",
     "morgan": "~1.9.0",
+    "nodemon": "^1.18.1",
     "redux": "^4.0.0",
     "serve-favicon": "~2.4.5"
   }
