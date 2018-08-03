@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+export const checkAuth = () => async (dispatch) => {
+    const result = await axios.post('/admin/checkAuth');
+
+    dispatch({ type: 'CHECK_AUTH', payload: result.data });
+};
+
 export const onclickAction = (clicked) => {
     return { type: 'TOGGLE_DROPDOWN', payload: clicked};
 };
@@ -47,4 +53,16 @@ export const handleCheckout = (formData) => async (dispatch) => {
     );
 
     dispatch({ type: 'CHECKOUT', payload: [] });
+};
+
+export const addItem = (formData) => async (dispatch) => {
+    const config = {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
+    };
+
+    const result = await axios.post('/newsfeed/addItem', formData, config);
+
+    dispatch({ type: 'ADD_ITEM', payload: result.data });
 };

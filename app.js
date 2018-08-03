@@ -3,18 +3,29 @@ const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const expressHbs = require('express-handlebars');
 const mongoose = require('mongoose');
+
+const config = require('./config');
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const users = require('./routes/users');
-const store = require('./routes/store');
-
 const app = express();
 
-module.exports = mongoose.connect('mongodb://localhost:27017/shopping', {useMongoClient: true});
+module.exports.model = mongoose.connect(config.mongoURI, { useMongoClient: true })
+    .then((mongooseConnection) => {
+        const gridfs = require('mongoose-gridfs')({
+            collection: 'files',
+            model: 'File',
+            mongooseConnection
+        });
+
+        return gridfs.model;
+    });
+
+const store = require('./routes/store');
+const admin = require('./routes/admin');
+const newsfeed = require('./routes/newsfeed');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -25,16 +36,11 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({ mongooseConnection: mongoose.connection}),
-    cookie: { maxAge: 180 * 60 * 1000 }
+    cookie: { maxAge: 24 * 60 * 60 * 1000 }
 }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req, res, next) => {
-   res.locals.session = req.session;
-   next();
-});
-
-app.use('/user', users);
+app.use('/admin', admin);
+app.use('/newsfeed', newsfeed);
 app.use('/store', store);
 
 if (process.env.NODE_ENV === 'production') {
@@ -43,6 +49,12 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
+// else {
+//     app.use(express.static('client/public'));
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'));
+//     });
+// }
 
 app.use(function(req, res, next) {
     let err = new Error('Not Found');

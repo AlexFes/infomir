@@ -1,4 +1,18 @@
-export const onclickReducer = (state = {clicked: false, clickedStore: false, checkoutModal: false, submitModal: false}, action) => {
+import _ from 'lodash';
+
+export const authReducer = (state = { admin: false }, action) => {
+    switch (action.type) {
+        case 'CHECK_AUTH':
+            return {
+                admin: action.payload ? true : false
+            };
+
+        default:
+            return state;
+    }
+};
+
+export const onclickReducer = (state = { clicked: false, clickedStore: false, checkoutModal: false, submitModal: false }, action) => {
     switch (action.type) {
         case 'TOGGLE_DROPDOWN':
             return {
@@ -29,7 +43,7 @@ export const onclickReducer = (state = {clicked: false, clickedStore: false, che
     }
 };
 
-export const storeReducer = (state = {products: [], cart: null}, action) => {
+export const storeReducer = (state = { products: [], cart: null }, action) => {
     switch (action.type) {
         case 'FETCH_INITIAL_DATA':
             return {
@@ -53,6 +67,25 @@ export const storeReducer = (state = {products: [], cart: null}, action) => {
             return {
                 ...state,
                 cart: action.payload
+            };
+
+        default:
+            return state;
+    }
+};
+
+export const newsReducer = (state = { newsList: [] }, action) => {
+    switch (action.type) {
+        case 'ADD_ITEM':
+            return {
+                ...state,
+                newsList: _.concat([], state.newsList, action.payload)
+            };
+
+        case 'REMOVE_ITEM':
+            return {
+                ...state,
+                newsList: action.payload
             };
 
         default:

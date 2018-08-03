@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "lodash": "^4.17.10",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -16,6 +17,15 @@
   },
   "proxy": {
     "/store/*": {
+      "target": "http://localhost:5000"
+    },
+    "/admin/loginPost": {
+      "target": "http://localhost:5000"
+    },
+    "/admin/checkAuth": {
+      "target": "http://localhost:5000"
+    },
+    "/newsfeed": {
       "target": "http://localhost:5000"
     }
   },
