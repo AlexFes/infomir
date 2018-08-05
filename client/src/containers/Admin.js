@@ -14,6 +14,10 @@ class Admin extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.fetchAuthData();
+    }
+
     handleSubmit(event) {
         let formData = new FormData();
 
@@ -77,6 +81,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addItem: (formData) => {
             dispatch(actions.addItem(formData));
+        },
+
+        fetchAuthData: () => {
+            dispatch(actions.fetchAuthData());
         }
     };
 };

@@ -1,9 +1,14 @@
 import axios from 'axios';
+import { push } from 'connected-react-router';
 
-export const checkAuth = () => async (dispatch) => {
+export const fetchAuthData = () => async (dispatch) => {
     const result = await axios.post('/admin/checkAuth');
 
-    dispatch({ type: 'CHECK_AUTH', payload: result.data });
+    if (!result.data) {
+        dispatch(push('/admin/login'));
+    } else {
+        dispatch({ type: 'AUTH_SUCCESS', payload: result.data})
+    }
 };
 
 export const onclickAction = (clicked) => {

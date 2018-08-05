@@ -17,7 +17,7 @@ router.post('/loginPost', (req, res) => {
 });
 
 router.post('/checkAuth', (req, res) => {
-    res.send(req.session.admin);
+    res.send(req.session.admin || false);
 });
 
 module.exports = router;

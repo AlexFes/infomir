@@ -2,9 +2,9 @@ import _ from 'lodash';
 
 export const authReducer = (state = { admin: false }, action) => {
     switch (action.type) {
-        case 'CHECK_AUTH':
+        case 'AUTH_SUCCESS':
             return {
-                admin: action.payload ? true : false
+                admin: action.payload
             };
 
         default:
